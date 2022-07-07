@@ -16,7 +16,7 @@
 }
 
 .starting-block {
-    background-color: green;
+    background-color: darkblue;
 }
 
 .log-left, 
@@ -29,3 +29,6 @@
     background-color: lightgray;
 }
 
+.frog {
+    background-color: green;
+}
