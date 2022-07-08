@@ -160,11 +160,17 @@ const gameWin = () => {
     }
 };
 
+if (!timerId) {
+    document.removeEventListener('keyup', moveFrog);
+}
+
 startPauseButton.addEventListener('click', () => {
     if (timerId) {
         clearInterval(timerId)
+        clearInterval(outcomeTimerId)
         document.removeEventListener('keyup', moveFrog);
         timerId = null;
+        outcomeTimerId = null;
     } else {
         timerId = setInterval(autoMoveElements, 1000)
         outcomeTimerId = setInterval(checkOutcome, 1);
