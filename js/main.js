@@ -9,7 +9,8 @@ const logsRight = document.querySelectorAll('.log-right');
 const carsLeft = document.querySelectorAll('.car-left');
 const carsRight = document.querySelectorAll('.car-right');
 let timerId;
-let currentTime = 5;
+let outcomeTimerId;
+let currentTime = 20;
 
 const moveFrog = (e) => {
 
@@ -46,9 +47,12 @@ const autoMoveElements = () => {
     logsRight.forEach(logRight => moveLogRight(logRight));
     carsLeft.forEach(carLeft => moveCarLeft(carLeft));
     carsRight.forEach(carRight => moveCarRight(carRight));
+};
+
+const checkOutcome = () => {
     gameLoss();
     gameWin();
-}
+};
 
 const moveLogLeft = (logLeft) => {
     switch(true) {
@@ -73,7 +77,7 @@ const moveLogLeft = (logLeft) => {
             logLeft.classList.add('l1')
             break
     }
-}
+};
 
 const moveLogRight = (logRight) => {
     switch(true) {
@@ -98,7 +102,7 @@ const moveLogRight = (logRight) => {
             logRight.classList.add('l5')
             break
     }
-}
+};
 
 const moveCarLeft = (carLeft) => {
     switch(true) {
@@ -115,7 +119,7 @@ const moveCarLeft = (carLeft) => {
             carLeft.classList.add('c1')
             break
     }
-}
+};
 
 const moveCarRight = (carRight) => {
     switch(true) {
@@ -132,7 +136,7 @@ const moveCarRight = (carRight) => {
             carRight.classList.add('c3')
             break
     }
-}
+};
 
 const gameLoss = () => {
     if (
@@ -154,15 +158,16 @@ const gameWin = () => {
         clearInterval(timerId);
         document.removeEventListener('keyup', moveFrog);
     }
-}
+};
 
 startPauseButton.addEventListener('click', () => {
     if (timerId) {
         clearInterval(timerId)
+        document.removeEventListener('keyup', moveFrog);
+        timerId = null;
     } else {
-    timerId = setInterval(autoMoveElements, 1000)
+        timerId = setInterval(autoMoveElements, 1000)
+        outcomeTimerId = setInterval(checkOutcome, 1);
+        document.addEventListener('keyup', moveFrog);
     }
 });
-
-timerId = setInterval(autoMoveElements, 1000);
-
