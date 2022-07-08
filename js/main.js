@@ -130,28 +130,18 @@ const moveCarRight = (carRight) => {
     }
 }
 
-timerId = setInterval(autoMoveElements, 1000);
-
 const gameLoss = () => {
-    if (squares[currentIndex].classList.contains('c1')) {
-        resultDisplay.textContent = 'You Lose!';
-        clearInterval(timerId);
-        squares[currentIndex].classList.remove('frog');
-        document.removeEventListener('keyup', moveFrog);
-    }
-
-    else if (squares[currentIndex].classList.contains('l4')) {
-        resultDisplay.textContent = 'You Lose!';
-        clearInterval(timerId);
-        squares[currentIndex].classList.remove('frog');
-        document.removeEventListener('keyup', moveFrog);
-    }
-
-    else if (squares[currentIndex].classList.contains('l5')) {
+    if (
+        squares[currentIndex].classList.contains('c1') ||
+        squares[currentIndex].classList.contains('l4') ||
+        squares[currentIndex].classList.contains('l5')
+    ) {
         resultDisplay.textContent = 'You Lose!';
         clearInterval(timerId);
         squares[currentIndex].classList.remove('frog');
         document.removeEventListener('keyup', moveFrog);
     }
 };
+
+timerId = setInterval(autoMoveElements, 750);
 
