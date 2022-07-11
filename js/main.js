@@ -52,6 +52,7 @@ const autoMoveElements = () => {
 const checkOutcome = () => {
   gameLoss();
   gameWin();
+  headerTextModifier();
 };
 
 const moveLogLeft = (logLeft) => {
@@ -138,6 +139,33 @@ const moveCarRight = (carRight) => {
   }
 };
 
+const headerTextModifier = () => {
+  if (squares[currentIndex].classList.contains("road-edge")) {
+    resultDisplay.textContent = "Cars ahead, avoid becoming a frog flapjack";
+  }
+  if (
+    squares[currentIndex].classList.contains("c2") ||
+    squares[currentIndex].classList.contains("c3")
+  ) {
+    resultDisplay.textContent = "LEEEROY JEEENKINS!!!";
+  }
+  if (squares[currentIndex].classList.contains("river-bank")) {
+    resultDisplay.textContent =
+      "There's no VAN down by the RIVER to live in, so keep it moving";
+  }
+  if (
+    squares[currentIndex].classList.contains("l1") ||
+    squares[currentIndex].classList.contains("l2") ||
+    squares[currentIndex].classList.contains("l3")
+  ) {
+    resultDisplay.textContent =
+      "Water is the essence of moisture, and moisture is the essence of frog murder...";
+  }
+  if (squares[currentIndex].classList.contains("after-river")) {
+    resultDisplay.textContent = "You are so close my frog dude";
+  }
+};
+
 const gameLoss = () => {
   if (
     squares[currentIndex].classList.contains("c1") ||
@@ -146,7 +174,7 @@ const gameLoss = () => {
     squares[currentIndex].classList.contains("l5") ||
     currentTime <= 0
   ) {
-    resultDisplay.textContent = "You Lose!";
+    resultDisplay.textContent = "Your frog family will never see you again!";
     clearInterval(timerId);
     squares[currentIndex].classList.remove("frog");
     document.removeEventListener("keyup", moveFrog);
@@ -155,7 +183,7 @@ const gameLoss = () => {
 
 const gameWin = () => {
   if (squares[currentIndex].classList.contains("ending-block")) {
-    resultDisplay.textContent = "You Win!";
+    resultDisplay.textContent = "You lived...only to die another frog day!";
     clearInterval(timerId);
     document.removeEventListener("keyup", moveFrog);
   }

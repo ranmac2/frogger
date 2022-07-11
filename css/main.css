@@ -10,6 +10,16 @@ body {
     margin-bottom: 25px;
 }
 
+h2 {
+    font-family: 'Lobster', cursive;
+    padding: 0;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
 
 .grid {
     border: 5px solid black;
@@ -41,7 +51,7 @@ body {
 }
 
 .l1, .l2, .l3 {
-    background-image: url('../img/log-resized.png');
+    background-image: url('../img/tree-log-resized.png');
     background-color: aqua;
 }
 
