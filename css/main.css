@@ -14,7 +14,7 @@ body {
     border: 1px solid black;
     background-color: lightgreen;
     margin: 0 auto;
-    height: 600px;
+    height: 610px;
     width: 600px;
     display: flex;
     flex-wrap: wrap;
@@ -50,6 +50,15 @@ body {
 .c1 {
     background-image: url('../img/red-car-resized.png');
     background-position: center;
+}
+
+.grid hr {
+    border-top: 5px dotted yellow;
+    border-bottom: none;
+    width: 100%;
+    background-color: lightgray;
+    padding: 0;
+    margin: 0;
 }
 
 .c2, .c3 {
