@@ -10,12 +10,13 @@ body {
     margin-bottom: 25px;
 }
 
+
 .grid {
     border: 1px solid black;
     background-color: lightgreen;
     margin: 0 auto;
     height: 610px;
-    width: 600px;
+    width: 602px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -26,11 +27,12 @@ body {
 }
 
 .ending-block {
-    background-color: red;
+    background-image: url('../img/checkered-flag.png');
+    border: 1px solid black;
 }
 
 .starting-block {
-    background-color: darkblue;
+    background-image: url('../img/frog-resized.png');
 }
 
 .car-left, 

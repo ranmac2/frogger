@@ -11,6 +11,7 @@ const carsRight = document.querySelectorAll(".car-right");
 let timerId;
 let outcomeTimerId;
 let currentTime = 20;
+const startingBlock = document.querySelector(".starting-block");
 
 const moveFrog = (e) => {
   squares[currentIndex].classList.remove("frog");
@@ -33,7 +34,7 @@ const moveFrog = (e) => {
       if (currentIndex + width < width * width) currentIndex += width;
       break;
   }
-
+  startingBlock.classList.remove("starting-block");
   squares[currentIndex].classList.add("frog");
 };
 
