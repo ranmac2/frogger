@@ -185,7 +185,7 @@ const gameLoss = () => {
 
 const gameWin = () => {
   if (squares[currentIndex].classList.contains("ending-block")) {
-    resultDisplay.textContent = "You lived...only to die another frog day!";
+    resultDisplay.textContent = "You lived...this time...";
     clearInterval(timerId);
     document.removeEventListener("keyup", moveFrog);
   }
