@@ -20,6 +20,10 @@ h3 {
     margin: 0;
 }
 
+button {
+    margin-top: 20px;
+}
+
 
 .grid {
     border: 5px solid black;
@@ -56,6 +60,15 @@ h3 {
 }
 
 .l4, .l5 {
+    background-color: aqua;
+}
+
+.l6, .l7, .l8 {
+    background-image: url("../img/tree-log-resized-flipped.png");
+    background-color: aqua;
+}
+
+.l9, .l10 {
     background-color: aqua;
 }
 

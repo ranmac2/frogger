@@ -82,25 +82,25 @@ const moveLogLeft = (logLeft) => {
 
 const moveLogRight = (logRight) => {
   switch (true) {
-    case logRight.classList.contains("l5"):
-      logRight.classList.remove("l5");
-      logRight.classList.add("l4");
+    case logRight.classList.contains("l10"):
+      logRight.classList.remove("l10");
+      logRight.classList.add("l9");
       break;
-    case logRight.classList.contains("l4"):
-      logRight.classList.remove("l4");
-      logRight.classList.add("l3");
+    case logRight.classList.contains("l9"):
+      logRight.classList.remove("l9");
+      logRight.classList.add("l8");
       break;
-    case logRight.classList.contains("l3"):
-      logRight.classList.remove("l3");
-      logRight.classList.add("l2");
+    case logRight.classList.contains("l8"):
+      logRight.classList.remove("l8");
+      logRight.classList.add("l7");
       break;
-    case logRight.classList.contains("l2"):
-      logRight.classList.remove("l2");
-      logRight.classList.add("l1");
+    case logRight.classList.contains("l7"):
+      logRight.classList.remove("l7");
+      logRight.classList.add("l6");
       break;
-    case logRight.classList.contains("l1"):
-      logRight.classList.remove("l1");
-      logRight.classList.add("l5");
+    case logRight.classList.contains("l6"):
+      logRight.classList.remove("l6");
+      logRight.classList.add("l10");
       break;
   }
 };
@@ -172,6 +172,8 @@ const gameLoss = () => {
     squares[currentIndex].classList.contains("c4") ||
     squares[currentIndex].classList.contains("l4") ||
     squares[currentIndex].classList.contains("l5") ||
+    squares[currentIndex].classList.contains("l9") ||
+    squares[currentIndex].classList.contains("l10") ||
     currentTime <= 0
   ) {
     resultDisplay.textContent = "Your frog family will never see you again!";
