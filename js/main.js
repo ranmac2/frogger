@@ -123,17 +123,17 @@ const moveCarLeft = (carLeft) => {
 
 const moveCarRight = (carRight) => {
   switch (true) {
-    case carRight.classList.contains("c3"):
-      carRight.classList.remove("c3");
-      carRight.classList.add("c2");
+    case carRight.classList.contains("c4"):
+      carRight.classList.remove("c4");
+      carRight.classList.add("c6");
       break;
-    case carRight.classList.contains("c2"):
-      carRight.classList.remove("c2");
-      carRight.classList.add("c1");
+    case carRight.classList.contains("c6"):
+      carRight.classList.remove("c6");
+      carRight.classList.add("c5");
       break;
-    case carRight.classList.contains("c1"):
-      carRight.classList.remove("c1");
-      carRight.classList.add("c3");
+    case carRight.classList.contains("c5"):
+      carRight.classList.remove("c5");
+      carRight.classList.add("c4");
       break;
   }
 };
@@ -141,6 +141,7 @@ const moveCarRight = (carRight) => {
 const gameLoss = () => {
   if (
     squares[currentIndex].classList.contains("c1") ||
+    squares[currentIndex].classList.contains("c4") ||
     squares[currentIndex].classList.contains("l4") ||
     squares[currentIndex].classList.contains("l5") ||
     currentTime <= 0
