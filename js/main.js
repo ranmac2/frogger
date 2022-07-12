@@ -190,13 +190,15 @@ const gameLoss = () => {
 };
 
 const resetGame = () => {
-  resultDisplay.textContent = "Get him back to his humble abode!";
-  startPauseButton.textContent = "Start/Pause";
-  timeLeftDisplay.textContent = "20";
-  currentTime = 20;
-  currentIndex = 76;
-  squares[currentIndex].classList.add("frog");
-  document.addEventListener("keyup", moveFrog);
+  if (startPauseButton.textContent === "Reset") {
+    resultDisplay.textContent = "Get him back to his humble abode!";
+    startPauseButton.textContent = "Start/Pause";
+    timeLeftDisplay.textContent = "20";
+    currentTime = 20;
+    currentIndex = 76;
+    squares[currentIndex].classList.add("frog");
+    document.addEventListener("keyup", moveFrog);
+  }
 };
 
 startPauseButton.addEventListener("click", resetGame);
