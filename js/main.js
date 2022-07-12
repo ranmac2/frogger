@@ -141,7 +141,7 @@ const moveCarRight = (carRight) => {
 
 const headerTextModifier = () => {
   if (squares[currentIndex].classList.contains("road-edge")) {
-    resultDisplay.textContent = "Cars ahead, avoid becoming a frog flapjack";
+    resultDisplay.textContent = "Cars ahead, be swift or be frog flapjack";
   }
   if (
     squares[currentIndex].classList.contains("c2") ||
@@ -152,8 +152,7 @@ const headerTextModifier = () => {
     resultDisplay.textContent = "LEEEROY JEEENKINS!!!";
   }
   if (squares[currentIndex].classList.contains("river-bank")) {
-    resultDisplay.textContent =
-      "There's no VAN down by the RIVER to live in, so keep it moving";
+    resultDisplay.textContent = "You don't live in a van down by the river...";
   }
   if (
     squares[currentIndex].classList.contains("l1") ||
@@ -163,11 +162,10 @@ const headerTextModifier = () => {
     squares[currentIndex].classList.contains("l7") ||
     squares[currentIndex].classList.contains("l8")
   ) {
-    resultDisplay.textContent =
-      "Water is the essence of moisture, and moisture is the essence of frog murder...";
+    resultDisplay.textContent = "Water is death to frogs, really, it's true!";
   }
   if (squares[currentIndex].classList.contains("after-river")) {
-    resultDisplay.textContent = "You are so close my frog dude";
+    resultDisplay.textContent = "You are so close my frog dude!";
   }
 };
 
@@ -181,7 +179,7 @@ const gameLoss = () => {
     squares[currentIndex].classList.contains("l10") ||
     currentTime <= 0
   ) {
-    resultDisplay.textContent = "Your frog family will never see you again!";
+    resultDisplay.textContent = "Your frog family will never see you again...";
     startPauseButton.textContent = "Reset";
     clearInterval(timerId);
     squares[currentIndex].classList.remove("frog");
@@ -191,7 +189,7 @@ const gameLoss = () => {
 
 const resetGame = () => {
   if (startPauseButton.textContent === "Reset") {
-    resultDisplay.textContent = "Get him back to his humble abode!";
+    resultDisplay.textContent = "Get that frog to that mushroom dammit!";
     startPauseButton.textContent = "Start/Pause";
     timeLeftDisplay.textContent = "20";
     currentTime = 20;
@@ -205,7 +203,7 @@ startPauseButton.addEventListener("click", resetGame);
 
 const gameWin = () => {
   if (squares[currentIndex].classList.contains("ending-block")) {
-    resultDisplay.textContent = "You lived...this time...";
+    resultDisplay.textContent = "Great Success!!!";
     startPauseButton.textContent = "Next Level";
     clearInterval(timerId);
     document.removeEventListener("keyup", moveFrog);
