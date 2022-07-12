@@ -145,7 +145,9 @@ const headerTextModifier = () => {
   }
   if (
     squares[currentIndex].classList.contains("c2") ||
-    squares[currentIndex].classList.contains("c3")
+    squares[currentIndex].classList.contains("c3") ||
+    squares[currentIndex].classList.contains("c5") ||
+    squares[currentIndex].classList.contains("c6")
   ) {
     resultDisplay.textContent = "LEEEROY JEEENKINS!!!";
   }
@@ -156,7 +158,10 @@ const headerTextModifier = () => {
   if (
     squares[currentIndex].classList.contains("l1") ||
     squares[currentIndex].classList.contains("l2") ||
-    squares[currentIndex].classList.contains("l3")
+    squares[currentIndex].classList.contains("l3") ||
+    squares[currentIndex].classList.contains("l6") ||
+    squares[currentIndex].classList.contains("l7") ||
+    squares[currentIndex].classList.contains("l8")
   ) {
     resultDisplay.textContent =
       "Water is the essence of moisture, and moisture is the essence of frog murder...";
@@ -177,15 +182,29 @@ const gameLoss = () => {
     currentTime <= 0
   ) {
     resultDisplay.textContent = "Your frog family will never see you again!";
+    startPauseButton.textContent = "Reset";
     clearInterval(timerId);
     squares[currentIndex].classList.remove("frog");
     document.removeEventListener("keyup", moveFrog);
   }
 };
 
+const resetGame = () => {
+  resultDisplay.textContent = "Get him back to his humble abode!";
+  startPauseButton.textContent = "Start/Pause";
+  timeLeftDisplay.textContent = "20";
+  currentTime = 20;
+  currentIndex = 76;
+  squares[currentIndex].classList.add("frog");
+  document.addEventListener("keyup", moveFrog);
+};
+
+startPauseButton.addEventListener("click", resetGame);
+
 const gameWin = () => {
   if (squares[currentIndex].classList.contains("ending-block")) {
     resultDisplay.textContent = "You lived...this time...";
+    startPauseButton.textContent = "Next Level";
     clearInterval(timerId);
     document.removeEventListener("keyup", moveFrog);
   }
